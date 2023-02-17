@@ -1,0 +1,10 @@
+@use '../utils/' as *;
+.header {
+  padding-block: rem(30);
+  background-color: var(--light-el);
+  box-shadow: var(--header-shadow);
+
+  &__content {
+    gap: rem(16);
+  }
+}

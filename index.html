@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="app/scss/style.scss" />
+    <script type="module" defer src="app/js/controller.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content wrapper flex flex-jc-sb flex-ai-c flex-fw-w">
+        <h1>Where in the world?</h1>
+        <fieldset
+        class="header__toggle toggle"
+        aria-label="theme toggle"
+        role="radiogroup"
+      >        <label for="light">Dark Mode</label>
+        <div class="toggle__wrapper">
+          <input type="radio" name="theme" class="input" id="dark" checked />
+          <input type="radio" name="theme" class="input" id="light" />
+          <div class="toggle__icon-wrapper flex">
+            <i class="fa-solid fa-moon toggle__icon" aria-hidden="true"></i>
+            <i class="fa-solid fa-lightbulb toggle__icon"></i>
+          </div>
+          <span aria-hidden="true" class="toggle__background"> </span>
+          <span aria-hidden="true" class="toggle__switcher"></span>
+        </div>
+        <label for="light" class="visually-hidden">Light</label>
+      </fieldset>
+    </header>
+    <main class="main">
+      <article class="search wrapper flex flex-jc-sb flex-fw-w">
+        <div class="search__field search__field--input">
+          <button class="search__btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass search__icon"></i>
+          </button>
+          <input
+            id="searchInput"
+            type="text"
+            
+            placeholder="Search for a country..."
+          />
+        </div>
+        <section class="search__regions">
+          <div
+            id="searchRegion"
+            class="search__field search__regions--btn flex flex-ai-c flex-jc-sa"
+          >
+            <summary>Filter by Region</summary>
+            <i
+              id="searchRegionIcon"
+              class="fa-solid fa-circle-chevron-down search__region-icon"
+            ></i>
+          </div>
+          <ul id="searchRegionList" class="search__regions-list active">
+            <li value="all">All</li>
+            <li value="africa">Africa</li>
+            <li value="americas">Americas</li>
+            <li value="asia">Asia</li>
+            <li value="europe">Europe</li>
+            <li value="oceanie">Oceania</li>
+          </ul>
+        </section>
+      </article>
+      <section class="container cards wrapper"></section>
+      <!-- <article class="country">
+          <a href="#" class="country__link">
+            <div class="country__img">
+              <img src="app/img/al.svg" alt="" />
+            </div>
+            <div class="country__data">
+              <h2 class="country__name">Country</h2>
+              <div>
+                <p class="country__row"><span>👫</span>Population:</p>
+                <p class="country__row">Region:</p>
+                <p class="coutnry__row">Capital:</p>
+              </div>
+            </div>
+          </a>
+        </article> -->
+
+      <!-- <div class="spinner">
+        <svg>
+          <use href="app/img/icons.svg#icon-loader"></use>
+        </svg>
+      </div> -->
+      <!-- <div class="error">
+        <div>
+          <svg>
+            <use href="app/img/icons.svg#icon-alert-triangle"></use>
+          </svg>
+        </div>
+        <p>Try again</p>
+      </div> -->
+
+      <!-- <buttion class="back__btn" style="display: none">
+        <i class="fa-sharp fa-solid fa-arrow-left back__btn-icon"></i>
+        <span>Back</span>
+      </buttion> -->
+
+      <!-- <article class="full-data wrapper">
+        <img class="full-data__img" src="app/img/al.svg" alt="" />
+
+        <div class="full-data__content">
+          <div class="full-data__name"><h2>United States</h2></div>
+          <section class="full-data__block">
+            <ul class="full-data__lists">
+              <li><span>Native Name:</span></li>
+              <li><span>Population:</span></li>
+              <li><span>Region:</span></li>
+              <li><span>Sub Region:</span></li>
+              <li><span>Capital:</span></li>
+            </ul>
+            <ul class="full-data__lists">
+              <li><span>Top Level Domain:</span></li>
+              <li><span>Currencies:</span></li>
+              <li><span>Languages:</span></li>
+            </ul>
+          </section>
+          <section class="full-data__border flex flex-fw-w">
+            <p class="full-data__border-title flex flex-ai-c">
+              Border Countries:
+            </p>
+            <div class="full-data__countries-borders flex flex-fw-w">
+              <a href="#" class="full-data__border-country">France</a>
+            </div>
+          </section>
+        </div>
+      </article> -->
+    </main>
+  </body>
+</html>

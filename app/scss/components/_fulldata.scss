@@ -1,0 +1,70 @@
+@use '../utils/' as *;
+.full-data {
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(130);
+    align-self: center;
+  }
+  &__img {
+    width: 100%;
+    max-width: 100%;
+    max-height: rem(360);
+  }
+  h2 {
+    font-size: rem(20);
+    @include breakpoint-up(medium) {
+      font-size: rem(26);
+    }
+  }
+  &__name {
+    margin-bottom: rem(24);
+  }
+  &__content {
+    margin-top: rem(44);
+    @include breakpoint-up(large) {
+      align-self: center;
+      margin-top: 0;
+    }
+  }
+  &__block {
+    display: grid;
+    --min-column-size: 215px;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100%, var(--min-column-size)), 1fr)
+    );
+
+    @include breakpoint-down(medium) {
+      gap: clamp(1rem, 5vmax, rem(60));
+    }
+  }
+  &__lists li {
+    &:not(:first-child) {
+      padding-top: rem(12);
+    }
+    font-weight: var(--font-w-thin);
+    span {
+      font-weight: var(--font-semi-bold);
+    }
+  }
+  &__border {
+    margin-top: rem(44);
+    gap: rem(14);
+    margin-bottom: rem(20);
+    @include breakpoint-up(large) {
+      margin-bottom: 0;
+    }
+  }
+  &__countries-borders {
+    gap: rem(10);
+  }
+  &__border-country {
+    display: block;
+    padding: rem(5) rem(40);
+    font-weight: var(--font-w-thin);
+    background-color: var(--light-el);
+    color: var(--light-text);
+    box-shadow: var(--shadow);
+  }
+}

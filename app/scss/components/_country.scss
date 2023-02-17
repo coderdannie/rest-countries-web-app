@@ -1,0 +1,43 @@
+@use '../utils/' as *;
+.country {
+  max-width: rem(305);
+  width: 100%;
+  max-height: rem(360);
+  margin: 0 auto;
+  background-color: var(--light-el);
+  border-radius: rem(8);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  opacity: 1;
+  transition: 300ms ease-in-out;
+  &:hover {
+    transform: translateY(rem(-10));
+  }
+  &__link {
+    display: block;
+    color: var(--light-text);
+  }
+
+  &__img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+  }
+  &__data {
+    padding-top: rem(32);
+    padding-inline: rem(24);
+    padding-bottom: rem(40);
+  }
+  &__name {
+    padding-bottom: rem(24);
+  }
+  &__row {
+    font-weight: var(--font-w-thin);
+    span {
+      font-weight: var(--font-semi-bold);
+    }
+    &:not(:last-child) {
+      padding-bottom: rem(12);
+    }
+  }
+}

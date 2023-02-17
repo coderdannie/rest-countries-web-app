@@ -1,0 +1,30 @@
+@use '../utils/' as *;
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+h1 {
+  font-size: rem(16);
+  font-weight: var(--font-bold);
+  margin: 0;
+  // margin-bottom: rem(3);
+  @include breakpoint-up(medium) {
+    font-size: rem(24);
+  }
+}
+h2 {
+  font-size: rem(16);
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+p {
+  font-size: rem(14);
+  // @include breakpoint-up(large) {
+  //   font-size: rem(16);
+  // }
+}

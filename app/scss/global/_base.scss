@@ -1,0 +1,104 @@
+@use '../utils/' as *;
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+body {
+  background-color: var(--light-bg);
+  font-family: var(--font);
+  font-weight: var(--font-semi-bold);
+  color: var(--light-text);
+}
+.flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-jc-sa {
+    justify-content: space-around;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+  &-fw-w {
+    flex-wrap: wrap;
+  }
+}
+.hide-for-mobile {
+  //hide for tablet and mobile devices
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  //hide for desktop viewport widths
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+.hide-for-tablet-and-desktop {
+  @include breakpoint-up(medium) {
+    display: none;
+  }
+}
+.show-for-mobile {
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+.display {
+  display: none;
+}
+.container {
+  padding-bottom: rem(20);
+}
+.cards {
+  display: grid;
+  --min-column-size: 260px;
+  column-gap: clamp(1rem, 5vmax, rem(76));
+  row-gap: clamp(1rem, 5vmax, rem(72));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--min-column-size)), 1fr)
+  );
+}
+
+.form-btn {
+  width: 100%;
+  color: var(--light-input);
+  font-family: var(--font);
+  font-size: rem(14);
+  font-weight: var(--font-semi-bold);
+}
+
+.wrapper {
+  width: 90%;
+  margin-inline: auto;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

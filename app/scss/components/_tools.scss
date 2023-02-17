@@ -1,0 +1,63 @@
+@use '../utils/' as *;
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+    fill: var(--light-text);
+    animation: rotate 2s infinite linear;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.message,
+.error {
+  max-width: 40rem;
+  padding: 1rem 4rem;
+  display: flex;
+  align-items: center;
+  color: var(--dark-bg);
+
+  .error-icon {
+    color: var(--dark-bg);
+    font-size: rem(24);
+
+    transform: translateY(-0.3rem);
+  }
+  p {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}
+.back__btn-container {
+  margin-top: rem(38);
+  margin-bottom: rem(64);
+  @include breakpoint-up(large) {
+    margin-block: rem(80);
+  }
+}
+.back__btn {
+  display: inline-block;
+  background-color: var(--light-el);
+  padding: rem(14) rem(32);
+  box-shadow: var(--shadow);
+
+  border-radius: rem(10);
+  cursor: pointer;
+}
+.back__btn-icon {
+  font-size: rem(20);
+  color: var(--dark-bg);
+  padding-right: rem(10);
+}
