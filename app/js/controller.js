@@ -4,25 +4,26 @@ import searchView from './views/searchView.js';
 import searchRegionView from './views/searchRegionView.js';
 import backBtnView from './views/backBtnView.js';
 import themeSwitchView from './views/themeSwitchView.js';
-import { COUNTRY_NAME } from './config.js';
+import { API_URL } from './config.js';
 import { getJSON } from './helper.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import themeSwitchView from './views/themeSwitchView.js';
 import { async } from 'regenerator-runtime';
 
-////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 const controlRegionFilter = function () {
   searchRegionView.addHandlerShowRegionBtn();
   searchRegionView.filterRegion();
 };
+
 const controlSearchCountry = async function () {
   try {
     const query = searchView.getQuery();
     if (!query) return controlAllCountries();
     //loading search
-    const data = await getJSON(`https://restcountries.com/v2/name/${query}`);
+    const data = await getJSON(`${API_URL}name/${query}`);
     semiCountryView._clear();
     //render search
     semiCountryView.render(data);
@@ -34,30 +35,26 @@ const controlCountryFullState = async function (e) {
   try {
     //loading country
     countryView.renderSpinner();
-    const id = e.getAttribute('href').slice(COUNTRY_NAME);
-    const data = await getJSON(`https://restcountries.com/v2/name/${id}`);
-
-    const [countryData] = data;
+    //get country aplhacode from the country link
+    const id = e.getAttribute('href').slice(-3);
+    const data = await getJSON(`${API_URL}alpha/${id}`);
     //render country
-    countryView.render(countryData);
+    countryView.render(data);
   } catch (err) {
     //render Error
     countryView.renderError();
-    console.log(err);
   }
 };
 
 const controlCountryBorders = async function (e) {
   try {
     countryView.renderSpinner();
-    //get country name from the country link
+    //get country border from the country link
     const id = e.getAttribute('href').slice(-3);
     if (!id) return;
-    const data = await getJSON(`https://restcountries.com/v2/alpha/${id}`);
-
-    const countryData = data;
+    const data = await getJSON(`${API_URL}alpha/${id}`);
     //render country
-    countryView.render(countryData);
+    countryView.render(data);
   } catch (err) {
     countryView.renderError();
   }
@@ -67,10 +64,11 @@ const controlAllCountries = async function () {
   try {
     semiCountryView.renderSpinner();
     //load all countries
-    const data = await getJSON(`https://restcountries.com/v2/all`);
+    const data = await getJSON(`${API_URL}all`);
     semiCountryView._clear();
     //render all countries
     semiCountryView.render(data);
+    console.log(data);
   } catch (err) {
     //render err
     semiCountryView.renderError();

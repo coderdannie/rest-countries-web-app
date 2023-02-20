@@ -13,13 +13,12 @@
   }
   h2 {
     font-size: rem(20);
+    margin-bottom: rem(24);
     @include breakpoint-up(medium) {
       font-size: rem(26);
     }
   }
-  &__name {
-    margin-bottom: rem(24);
-  }
+
   &__content {
     margin-top: rem(44);
     @include breakpoint-up(large) {

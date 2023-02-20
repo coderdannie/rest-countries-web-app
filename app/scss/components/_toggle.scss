@@ -13,7 +13,7 @@
   label {
     font-size: rem(14);
     font-weight: 700;
-
+    cursor: pointer;
     &[for='dark'] {
       margin-left: rem(3);
       @include breakpoint-up(medium) {
@@ -46,11 +46,13 @@
     padding-top: rem(1);
     transform: translateX(-50%);
     pointer-events: none;
+
     z-index: 1;
   }
   &__icon {
     -webkit-text-stroke-color: hsl(0, 0%, 100%);
     color: hsl(0, 0%, 100%);
+
     &:first-child {
       margin-right: rem(4);
     }

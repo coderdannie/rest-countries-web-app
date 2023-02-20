@@ -20,17 +20,18 @@ class SemiCountryView extends View {
   }
 
   _generateMarkup() {
+    // console.log(this._data)
     return this._data.map(this._generateMarkupPreview).join('');
   }
   _generateMarkupPreview(countryData) {
     return `
-    <article class="country">
+    <div class="country">
     <a href="https://restcountries.com/v2/${
-      countryData.name
+      countryData.alpha2Code
     }" class="country__link">
         <img class="country__img" src="${countryData.flags.png}" alt="" />
 
-      <div class="country__data">
+      <section class="country__data">
         <h2 class="country__name">${countryData.name}</h2>
         <div>
           <p class="country__row"><span>👫Population:</span> ${(+countryData.population).toLocaleString(
@@ -43,9 +44,9 @@ class SemiCountryView extends View {
             countryData.capital ? countryData.capital : 'no capital'
           }</p>
         </div>
-      </div>
+      </section>
    </a>
-  </article>
+  </div>
     `;
   }
 }

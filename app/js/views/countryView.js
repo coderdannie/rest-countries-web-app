@@ -23,10 +23,10 @@ class CountryView extends View {
   <span>Back</span>
  </buttion>
     </div>
-    <article class="full-data">
+    <section class="full-data">
     <img class="full-data__img" src="${this._data.flags.png}" alt="" />
     <div class="full-data__content">
-      <div class="full-data__name"><h2>${this._data.name}</h2></div>
+      <h2>${this._data.name}</h2>
       <section class="full-data__block">
         <ul class="full-data__lists">
           <li><span>Native Name:</span> ${this._data.nativeName}</li>
@@ -50,9 +50,9 @@ class CountryView extends View {
         </ul>
       </section>
       <section class="full-data__border flex flex-fw-w">
-        <p class="full-data__border-title flex flex-ai-c">
+        <h4 class="full-data__border-title flex flex-ai-c">
           Border Countries:
-        </p>
+        </h4>
         <div class="full-data__countries-borders flex flex-fw-w ">
         ${
           this._data.borders
@@ -68,7 +68,7 @@ class CountryView extends View {
         </div>
       </section>
     </div>
-    </article>
+    </section>
     `;
   }
 }

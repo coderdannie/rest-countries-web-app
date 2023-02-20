@@ -20,7 +20,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="app/scss/style.scss" />
-    <script type="module" defer src="app/js/controller.js"></script>
+    <script type="module"  src="app/js/controller.js"></script>
   </head>
   <body>
     <header class="header">
@@ -46,39 +46,37 @@
     </header>
     <main class="main">
       <article class="search wrapper flex flex-jc-sb flex-fw-w">
-        <div class="search__field search__field--input">
-          <button class="search__btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass search__icon"></i>
-          </button>
+        <section class="search__field search__field--input">
+            <i class="fa-solid fa-magnifying-glass search__btn search__icon flex flex-ai-c"></i>
           <input
             id="searchInput"
             type="text"
             
             placeholder="Search for a country..."
           />
-        </div>
+        </section>
         <section class="search__regions">
           <div
             id="searchRegion"
-            class="search__field search__regions--btn flex flex-ai-c flex-jc-sa"
+            class="search__field search__regions--btn flex flex-ai-c flex-jc-sb"
           >
-            <summary>Filter by Region</summary>
+            <span class="Filter-span">Filter by Region</span>
             <i
               id="searchRegionIcon"
               class="fa-solid fa-circle-chevron-down search__region-icon"
             ></i>
           </div>
           <ul id="searchRegionList" class="search__regions-list active">
-            <li value="all">All</li>
-            <li value="africa">Africa</li>
-            <li value="americas">Americas</li>
-            <li value="asia">Asia</li>
-            <li value="europe">Europe</li>
-            <li value="oceanie">Oceania</li>
+            <li>All</li>
+            <li>Africa</li>
+            <li>Americas</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
           </ul>
         </section>
       </article>
-      <section class="container cards wrapper"></section>
+      <div class="container cards wrapper"></div>
       <!-- <article class="country">
           <a href="#" class="country__link">
             <div class="country__img">

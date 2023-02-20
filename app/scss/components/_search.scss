@@ -59,7 +59,9 @@
       display: none;
     }
     &--btn {
+      padding-inline: rem(18);
       cursor: pointer;
+      border: 0;
     }
   }
   &__region-icon {

@@ -8,10 +8,11 @@ class regionView extends View {
   filterRegion() {
     this._regionLists.addEventListener('click', function (e) {
       const list = e.target.closest('li');
-      const summary = document.querySelector('summary');
+      const FilterSpan = document.querySelector('.Filter-span');
       if (!list) return;
-      summary.textContent = list.textContent;
-      if (list.textContent === 'All') summary.textContent = 'Filter by Region';
+      FilterSpan.textContent = list.textContent;
+      if (list.textContent === 'All')
+        FilterSpan.textContent = 'Filter by Region';
       const countryRegions = document.querySelectorAll('.country__region');
       countryRegions.forEach((region) => {
         region.textContent.includes(list.textContent) ||
