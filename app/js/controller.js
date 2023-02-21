@@ -11,8 +11,6 @@ import 'regenerator-runtime/runtime';
 import themeSwitchView from './views/themeSwitchView.js';
 import { async } from 'regenerator-runtime';
 
-////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////
 const controlRegionFilter = function () {
   searchRegionView.addHandlerShowRegionBtn();
   searchRegionView.filterRegion();

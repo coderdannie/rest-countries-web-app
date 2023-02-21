@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here]https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-using-vanilla-javascript-2qHtSr187z)
-- Live Site URL:[Add live site URL here](https://rest-countries-coderdannie.netlify.app/)
+- Solution URL:[Solution url](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-using-vanilla-javascript-xpg_fAcWyn)
+- Live Site URL:[live site Url](https://rest-countries-coderdannie.netlify.app/)
 
 ## My process
 
