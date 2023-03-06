@@ -33,7 +33,8 @@
       background-color: var(--light-el);
       color: var(--light-input);
       border: none;
-      padding-block: rem(20);
+      padding-top: rem(20);
+      padding-bottom: rem(20);
       padding-left: rem(28);
       &:focus-visible {
         outline: none;
@@ -59,7 +60,8 @@
       display: none;
     }
     &--btn {
-      padding-inline: rem(18);
+      padding-left: rem(18);
+      padding-right: rem(18);
       cursor: pointer;
       border: 0;
     }

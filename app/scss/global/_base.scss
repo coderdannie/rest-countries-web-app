@@ -91,7 +91,8 @@ body {
 
 .wrapper {
   width: 90%;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -100,5 +101,5 @@ body {
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-  width: 1px;
+  width: rem(1);
 }

@@ -66,7 +66,6 @@ const controlAllCountries = async function () {
     semiCountryView._clear();
     //render all countries
     semiCountryView.render(data);
-    console.log(data);
   } catch (err) {
     //render err
     semiCountryView.renderError();
